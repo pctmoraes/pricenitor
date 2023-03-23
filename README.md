@@ -22,8 +22,7 @@ Projeto tem como objetivo permitir ao usuário pesquisar o melhor preço de um d
 2. Execute o comando para instalação das dependências -> `pip install -r requirements.txt`
 3. Execute o comando para composição do container docker -> `docker-compose up -d`
     - Serão criados dois containers, um com o banco de dados PostgreSQL e um com pgAdmin para a gestão do db
-4. Execute o comando para a inicialização das tabelas na base de dados -> `python database\init_db.py`
-5. Acesse o pgAdmin pelo seu navegador através da URL -> `localhost:5050`
+4. Acesse o pgAdmin pelo seu navegador através da URL -> `localhost:5050`
     - Insira o login `admin@gmail.com` e senha `admin`
     - Com o botão direito no menu `Server` clique em `Register > Server`
     - Na aba General insira:
@@ -35,8 +34,8 @@ Projeto tem como objetivo permitir ao usuário pesquisar o melhor preço de um d
         - Password = admin
     - Clique em `Save`
     - Com queries de inserção popule a tabela com dados fictícios para utilizá-los com o scraper python.
-6. Execute o comando para rodar o servidor -> `uvicorn main:app`
+5. Execute o comando para rodar o servidor -> `uvicorn main:app`
     - Por padrão o servidor irá utilizar a porta 8000, mas é possível alterar passando uma outra porta através da flag --port, por exemplo -> `uvicorn main:app`
     - A documentação da API, gerada automaticamente pelo FastAPI, poderá ser consultada acessando o endpoint `localhost:8000/docs`, nela é possível verificar todos os endpoints disponíveis
-7. Rode o scraper com o comando -> python scraper.py 
-8. O programara irá pedir por uma descrição de produto, digite e clique em enter, caso encontre a opção, o programá retornará o produto, a loja com o menor preço e o preço, caso contrário, irá retornar uma mensagem informando o usuário.
+6. Rode o scraper com o comando -> `python scraper.py`
+7. O programara irá pedir por uma descrição de produto, digite e clique em enter, caso encontre a opção, o programá retornará o produto, a loja com o menor preço e o preço, caso contrário, irá retornar uma mensagem informando o usuário.
