@@ -23,8 +23,18 @@ Projeto tem como objetivo permitir ao usuário pesquisar o melhor preço de um d
 3. Execute o comando para composição do container docker -> `docker-compose up -d`
     - Serão criados dois containers, um com o banco de dados PostgreSQL e um com pgAdmin para a gestão do db
 4. Execute o comando para a inicialização das tabelas na base de dados -> `python database\init_db.py`
-5. Acesse o banco pela URL -> `host:5050`
-    Com queries de inserção popule a tabela com dados fictícios para utilizá-los com o scraper python.
+5. Acesse o pgAdmin pelo seu navegador através da URL -> `localhost:5050`
+    - Insira o login `admin@gmail.com` e senha `admin`
+    - Com o botão direito no menu `Server` clique em `Register > Server`
+    - Na aba General insira:
+        - Name = `db`
+    - Na aba Connection insira:
+        - Host name/address = `postgresql`
+        - Port = 5432
+        - Username = admin
+        - Password = admin
+    - Clique em `Save`
+    - Com queries de inserção popule a tabela com dados fictícios para utilizá-los com o scraper python.
 6. Execute o comando para rodar o servidor -> `uvicorn main:app`
     - Por padrão o servidor irá utilizar a porta 8000, mas é possível alterar passando uma outra porta através da flag --port, por exemplo -> `uvicorn main:app`
     - A documentação da API, gerada automaticamente pelo FastAPI, poderá ser consultada acessando o endpoint `localhost:8000/docs`, nela é possível verificar todos os endpoints disponíveis
